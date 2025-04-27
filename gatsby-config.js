@@ -10,7 +10,18 @@ module.exports = {
   plugins: [
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ["auto", "webp", "jpg"], // disables AVIF/HEIF to avoid "heifsave" errors
+          placeholder: "blurred",
+          quality: 80,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: "transparent",
+        },
+      },
+    },
     "gatsby-plugin-image",
     {
       resolve: "gatsby-source-contentful",
