@@ -1,6 +1,9 @@
 [template]
   incoming-hooks = ["Contentful"]
 
+[build.environment]
+  SHARP_IGNORE_UNSUPPORTED = "1"
+
 [template.environment]
   CONTENTFUL_SPACE_ID = ""
   CONTENTFUL_ACCESS_TOKEN = ""
